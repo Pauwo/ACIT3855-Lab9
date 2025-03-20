@@ -17,6 +17,7 @@ COPY . /app
 
 # Change permissions and become a non-privileged user
 RUN chown -R nobody:nogroup /app
+RUN chown -R nobody:nogroup /app/logs
 RUN chmod 755 /app/logs
 USER nobody
 
