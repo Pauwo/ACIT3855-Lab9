@@ -1,0 +1,18 @@
+---
+- name: Deploy Services
+  hosts: lab9-vm
+  become: yes
+  tasks:
+    - name: Clone/Pull Git Repo
+      ansible.builtin.git:
+        repo: git@github.com:Pauwo/ACIT3855-Lab9.git
+        dest: /home/paulo/lab9-project
+        accept_hostkey: yes
+        key_file: ~/.ssh/
+
+    - name: Ensure Docker Compose is Running
+      ansible.builtin.shell: |
+        cd /home/paulo/lab9-project
+        docker compose up -d --build
+      args:
+        executable: /bin/bash
