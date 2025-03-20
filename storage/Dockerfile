@@ -2,7 +2,7 @@ FROM python:3
 
 LABEL maintainer="rhernandez35@my.bcit.ca"
 
-RUN mkdir /app
+RUN mkdir /app/logs
 RUN apt-get update && apt-get install -y default-mysql-client
 # Copy just the requirements.txt first to leverage Docker cache
 # on `pip install`
@@ -17,6 +17,7 @@ COPY . /app
 
 # Change permissions and become a non-privileged user
 RUN chown -R nobody:nogroup /app
+RUN chmod 755 /app/logs
 USER nobody
 
 # Tells on which port the service listens in the container
