@@ -2,7 +2,7 @@ FROM python:3
 
 LABEL maintainer="rhernandez35@my.bcit.ca"
 
-RUN mkdir /app/logs
+RUN mkdir -p /app/logs
 RUN apt-get update && apt-get install -y default-mysql-client
 # Copy just the requirements.txt first to leverage Docker cache
 # on `pip install`
