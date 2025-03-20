@@ -16,10 +16,7 @@ RUN pip3 install -r requirements.txt
 COPY . /app
 
 # Change permissions and become a non-privileged user
-# RUN chown -R nobody:nogroup /app
-RUN mkdir -p /app/logs && \
-    chown -R nobody:nogroup /app/logs && \
-    chmod 755 /app/logs
+RUN chown -R nobody:nogroup /app
 USER nobody
 
 # Tells on which port the service listens in the container
