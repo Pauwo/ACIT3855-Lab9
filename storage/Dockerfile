@@ -18,6 +18,7 @@ COPY . /app
 # Change permissions and become a non-privileged user
 RUN chown -R nobody:nogroup /app
 USER nobody
+RUN groupadd -g 988 docker && useradd -u 1000 -g docker -m paulo
 
 # Tells on which port the service listens in the container
 EXPOSE 8090
