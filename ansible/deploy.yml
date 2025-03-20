@@ -29,8 +29,7 @@
         dest: "/home/paulo/lab9/config/test/"
         mode: "push"
         recursive: yes
-        owner: nobody
-        group: nogroup
+
 
 
     - name: Ensure Docker Compose is Running
