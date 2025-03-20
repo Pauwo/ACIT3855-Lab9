@@ -11,6 +11,27 @@
         version: main
         key_file: ~/.ssh/id_ed25519
 
+    - name: Create 'data' and 'logs' directories
+      ansible.builtin.file:
+        path: "{{ item }}"
+        state: directory
+        mode: "0777"
+        owner: nobody
+        group: nogroup
+      loop:
+        - /home/paulo/lab9/data
+        - /home/paulo/lab9/logs
+
+    - name: Copy contents of config/prod to config/test
+      ansible.builtin.copy:
+        src: "config/prod/"
+        dest: "/home/paulo/lab9/config/test/"
+        mode: "0644"
+        owner: nobody
+        group: nogroup
+        remote_src: yes
+        recursive: yes
+
     - name: Ensure Docker Compose is Running
       ansible.builtin.shell: |
         cd /home/paulo/lab9
