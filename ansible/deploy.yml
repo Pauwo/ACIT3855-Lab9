@@ -21,6 +21,7 @@
       loop:
         - /home/paulo/lab9/data
         - /home/paulo/lab9/logs
+      become: true
 
     - name: Copy contents of config/prod to config/test
       ansible.builtin.copy:
