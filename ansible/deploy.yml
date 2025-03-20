@@ -24,14 +24,14 @@
       become: true
 
     - name: Copy contents of config/prod to config/test
-      ansible.builtin.copy:
+      ansible.builtin.synchronize:
         src: "config/prod/"
         dest: "/home/paulo/lab9/config/test/"
-        mode: "0644"
+        mode: "push"
+        recursive: yes
         owner: nobody
         group: nogroup
-        remote_src: yes
-        recursive: yes
+
 
     - name: Ensure Docker Compose is Running
       ansible.builtin.shell: |
