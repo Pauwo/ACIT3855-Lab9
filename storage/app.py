@@ -13,7 +13,7 @@ from pykafka import KafkaClient
 from pykafka.common import OffsetType
 
 # Load logging configuration from log_conf.yml
-with open("./config/test/log_conf.yml", "r") as f:
+with open("./config/test/storage/log_conf.yml", "r") as f:
     LOG_CONFIG = yaml.safe_load(f.read())
     logging.config.dictConfig(LOG_CONFIG)
 
@@ -21,7 +21,7 @@ with open("./config/test/log_conf.yml", "r") as f:
 logger = logging.getLogger('basicLogger')
 
 # Load database configuration from app_conf.yml
-with open("./config/test/app_conf.yml", "r") as f:
+with open("./config/test/storage/app_conf.yml", "r") as f:
     app_config = yaml.safe_load(f.read())
 
 db_user = app_config['datastore']['user']

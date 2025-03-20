@@ -13,7 +13,7 @@ import pytz  # For working with time zones
 # --------------------------------------------------
 # Setup Logging
 # --------------------------------------------------
-with open("./config/test/log_conf.yml", "r") as f:
+with open("./config/test/processing/log_conf.yml", "r") as f:
     log_config = yaml.safe_load(f.read())
     logging.config.dictConfig(log_config)
 logger = logging.getLogger("basicLogger")
@@ -21,7 +21,7 @@ logger = logging.getLogger("basicLogger")
 # --------------------------------------------------
 # Load Application Configuration
 # --------------------------------------------------
-with open("./config/test/app_conf.yml", "r") as f:
+with open("./config/test/processing/app_conf.yml", "r") as f:
     app_config = yaml.safe_load(f.read())
 
 # Use the datastore filename from the configuration (e.g., event_stats.json)
