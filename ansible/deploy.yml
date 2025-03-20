@@ -29,8 +29,7 @@
         dest: "/home/paulo/lab9/config/test/{{ item | basename }}"
         mode: "0644"
       with_fileglob:
-        - "C:/Users/rjpau/Documents/BCIT Classes/Level4/ACIT 3855 Service Based Architectures/Week 10/config/prod/*"
-      remote_src: no
+        - "/home/paulo/acit3855/ACIT3855-Lab9/config/prod/*"
 
 
 
