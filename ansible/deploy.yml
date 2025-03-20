@@ -6,13 +6,13 @@
     - name: Clone/Pull Git Repo
       ansible.builtin.git:
         repo: git@github.com:Pauwo/ACIT3855-Lab9.git
-        dest: /home/paulo/lab9-project
+        dest: /home/paulo/lab9
         accept_hostkey: yes
-        key_file: ~/.ssh/
+        key_file: ~/.ssh/id_ed25519.pub
 
     - name: Ensure Docker Compose is Running
       ansible.builtin.shell: |
-        cd /home/paulo/lab9-project
+        cd /home/paulo/lab9
         docker compose up -d --build
       args:
         executable: /bin/bash

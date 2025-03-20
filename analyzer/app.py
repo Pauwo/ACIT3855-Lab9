@@ -6,12 +6,12 @@ import yaml
 import logging.config
 
 # Load logging configuration from YAML
-with open("./config/log_conf.yml", "r") as f:
+with open("./config/test/log_conf.yml", "r") as f:
     LOG_CONFIG = yaml.safe_load(f.read())
     logging.config.dictConfig(LOG_CONFIG)
 
 # Load application configuration from app_config.yml
-with open("./config/app_config.yml", "r") as f:
+with open("./config/test/app_config.yml", "r") as f:
     APP_CONFIG = yaml.safe_load(f.read())
 
 # Create a logger instance
