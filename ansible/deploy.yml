@@ -8,6 +8,7 @@
         repo: git@github.com:Pauwo/ACIT3855-Lab9.git
         dest: /home/paulo/lab9
         accept_hostkey: yes
+        version: main
         key_file: ~/.ssh/id_ed25519
 
     - name: Ensure Docker Compose is Running
