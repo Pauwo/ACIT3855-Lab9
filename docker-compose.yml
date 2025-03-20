@@ -9,7 +9,7 @@ services:
     depends_on:
       - kafka
     volumes:
-      - ./config/receiver:/app/config
+      - ./config:/app/config
       - ./logs:/app/logs
     networks:
       - mynetwork
@@ -24,7 +24,7 @@ services:
     depends_on:
       - storage
     volumes:
-      - ./config/processing:/app/config
+      - ./config:/app/config
       - ./logs:/app/logs
       - ./data/processing:/app/data 
     networks:
@@ -40,7 +40,7 @@ services:
     depends_on:
       - processing
     volumes:
-      - ./config/analyzer:/app/config
+      - ./config:/app/config
       - ./logs:/app/logs
     networks:
       - mynetwork
@@ -79,7 +79,7 @@ services:
       - db
       - kafka
     volumes:
-      - ./config/storage:/app/config
+      - ./config:/app/config
       - ./logs:/app/logs
     networks:
       - mynetwork
